@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.*;
 
 public class BombSquare extends GameSquare
@@ -15,5 +16,25 @@ public class BombSquare extends GameSquare
 
 	public void clicked()
 	{
+		if (thisSquareHasBomb){
+			this.setImage("images/bomb.png");
+		} else if (checkSurroundings(this.xLocation+1,this.yLocation)){
+			this.setImage("images/1.png");
+		} else{
+			this.setImage("images/blank.png");
+		}
 	}
+
+	public boolean checkSurroundings(int x, int y){
+		BombSquare square = new BombSquare(x,y,board);
+		return square.checkSquare();
+	}
+
+	public boolean checkSquare(){
+		return thisSquareHasBomb;
+	}
+
+
+
+
 }
