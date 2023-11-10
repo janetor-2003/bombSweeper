@@ -11,11 +11,11 @@ import java.awt.event.*;
  */
 public class GameBoard extends JFrame implements ActionListener
 {
-	private JPanel boardPanel = new JPanel();
+	private final JPanel boardPanel = new JPanel();
 
-	private int boardHeight;
-	private int boardWidth;
-	private GameSquare[][] board; 
+	private final int boardHeight;
+	private final int boardWidth;
+	private final GameSquare[][] board;
 
 	/**
 	 * Create a new game board of the given size.
